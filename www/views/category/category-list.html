@@ -1,0 +1,28 @@
+<ion-view view-title="商品类别">
+  <ion-nav-buttons side="right">
+    <a class="button button-clear button-icon ion-ios-plus-cmpty" href="">
+    </a>
+  </ion-nav-buttons>
+  <ion-content class="stable-bg category-content-left">
+    <ul class="list">
+      <li class="item">大类别</li>
+      <li class="item" ng-repeat="category in categories" ng-click="seleCategory($index)">
+      {{category.Name}}
+      </li>
+    </ul>
+    </ion-content>
+  <ion-content class="light-bg category-content-right">
+    <ul class="list">
+      <li class="item">小类别</li>
+      <li class="item" ng-repeat="subCategory in activeCategory.Children">
+        {{subCategory.Name}}
+      </li>
+    </ul>
+    <button class="button button-positive button-clear icon-left ion-plus-circled">新增小分类</button>
+    </ion-content>
+  <div class="bar bar-footer row-center category-content-right-footer">
+    <span>目前没有小分类</span>
+    <button class="button button-icon stable-border button-small ion-android-more-horizontal pull-right">
+    </button>
+  </div>
+</ion-view>
