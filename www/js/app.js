@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngCordova','syzj.directives','ngMessages'])
 
   .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -64,16 +64,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           }
         }
       })
-      .state('app.category-list', {
-        url: '/category-list',
-        views: {
-          'menuContent': {
-            templateUrl: 'views/category/category-list.html',
-            controller: 'CategoryListCtrl'
-          }
-        }
-      })
-      
+
       .state('app.playlists', {
         url: '/playlists',
         views: {
@@ -84,12 +75,93 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       })
 
-     
-      
-      
+
+
+
+      .state('app.product-add', {
+        url: '/product-add',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/product/product-add.html',
+            controller: 'ProductAddCtrl'
+          }
+        }
+      })
+
+      .state('app.product-list', {
+        url: '/product-list',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/product/product-list.html',
+            controller: 'ProductLoading'
+          }
+        }
+      })
+
       .state('list-inset', {
         url: '/list-inset',
         templateUrl: 'views/list-inset/list-inset.html',
+      })
+
+      .state('app.category-add', {
+        url: '/category-add/:id/:name',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/category/category-add.html',
+            controller: 'CategoryAddCtrl'
+          }
+        }
+      })
+
+      .state('app.shop-edit', {
+        url: '/shop-edit',
+        params:{title:'',property:''},
+        views: {
+          'menuContent': {
+            templateUrl: 'views/shop/shop-edit.html',
+            controller: 'ShopEditCtrl'
+          }
+        }
+      })
+
+      .state('app.shop', {
+        url: '/shop',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/shop/shop.html',
+            controller: 'ShopCtrl'
+          }
+        }
+      })
+
+      .state('app.change-password', {
+        url: '/change-password',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/change-password.controller/change-password.html',
+            controller: 'ChangePasswordCtrl'
+          }
+        }
+      })
+
+      .state('app.setting', {
+        url: '/setting',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/setting/setting.html',
+            controller: 'SettingCtrl'
+          }
+        }
+      })
+
+      .state('app.category-list', {
+        url: '/category-list',
+        views: {
+          'menuContent': {
+            templateUrl: 'views/category/category-list.html',
+            controller: 'CategoryListCtrl'
+          }
+        }
       })
 
       .state('login', {

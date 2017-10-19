@@ -9858,3 +9858,27 @@ a.button {
 .category-content-right, .category-content-right-footer {
   width: 60%;
   margin-left: 40%; }
+
+.active-item {
+  background-color: #fff;
+  border-left: 4px solid #FF6A3C; }
+
+.toast-container {
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: opacity0 .8s;
+  z-index: 10; }
+  .toast-container.active {
+    opacity: 1; }
+
+.toast-message {
+  width: 270px;
+  margin: 5px auto;
+  padding: 5px;
+  background-color: #444;
+  text-align: center;
+  color: #fff;
+  border-radius: 7px;
+  font-size: 14px; }
